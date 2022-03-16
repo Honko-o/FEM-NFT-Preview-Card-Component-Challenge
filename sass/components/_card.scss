@@ -9,7 +9,6 @@
         // Space Between Image and the h1.nft-title
         margin-bottom: 1.66rem;
         position: relative;
-        cursor: pointer;
         img {
             display: block;
             max-width: 100%;
@@ -40,11 +39,10 @@
         }
     }
     .nft-info {
-        .nft-title {
+        a {
+            @include prefixer(transition, 0.3s color, webkit moz o);
             color: white;
             font-size: 1.3rem;
-            cursor: pointer;
-            @include prefixer(transition, 0.3s color, webkit moz o);
             &:hover {
                 color: $cyan;
             }
@@ -52,66 +50,65 @@
         .nft-desc {
             color: $lightBlue;
             font-weight: 300;
-            line-height: 1.7rem;
+            // MDN Recommend Static Unit or as they Call it Unitless Value
+            line-height: 1.7;
         }
         .nft-price-info {
             display: flex;
             align-items: center;
-            .nft-price {
-                flex-basis: 50%;
-                display: flex;
-                align-items: center;
-                .price {
-                    color: $cyan;
-                    margin: {
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 5px;
-                    }
-                    line-height: 1rem;
-                    font-weight: 600;
-                }
+        }
+        .nft-price {
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+        }
+        .price {
+            color: $cyan;
+            margin: {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 5px;
             }
-            .nft-remaining-time {
-                flex-basis: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                .time {
-                    color: $lightBlue;
-                    margin: {
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 5px;
-                    }
-                    line-height: 1rem;
-                }
+            line-height: 18px;
+            font-weight: 600;
+        }
+        .nft-remaining-time {
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .time {
+            color: $lightBlue;
+            margin: {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 5px;
             }
+            line-height: 18px;
         }
     }
-    .nft-author {
+    .nft-avatar {
         display: flex;
         align-items: center;
         margin-top: 1.11rem;
         border-top: 1px solid $line-bg;
-        .author-image {
+        .avatar-image {
             width: 35px;
             margin-right: 0.83rem;
             border: 1px solid white;
             border-radius: 50%;
         }
-        .author-desc {
+        .avatar-desc {
             color: $lightBlue;
-
-            span {
-                color: white;
-                cursor: pointer;
-                @include prefixer(transition, 0.3s color, webkit moz o);
-                &:hover {
-                color: $cyan;
-                }
+        }
+        a {
+            color: white;
+            @include prefixer(transition, 0.3s color, webkit moz o);
+            &:hover {
+            color: $cyan;
             }
         }
     }
