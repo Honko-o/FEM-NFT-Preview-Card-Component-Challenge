@@ -1,0 +1,26 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+* {
+    @include prefixer(box-sizing, border-box, webkit moz);
+}
+
+body {
+    @include flex(center, center);
+    background-color: $main-bg;
+    min-height: 100vh;
+}
+
+main {
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
